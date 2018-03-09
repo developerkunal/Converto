@@ -50,7 +50,6 @@ do
 	2)	
 		apt-get -f install kali-linux-all -y --allow-unauthenticated
 		apt-get -f install -y  --allow-unauthenticated
-		cat test.sh
 		break
 		;;
 	3)
