@@ -21,8 +21,8 @@ do
 	case $INPUT_STRING in
 		1) 
 			echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/apt/sources.list
-apt-get install kali-archive-keyring --allow-unauthenticated -y
-apt-get update && apt-get upgrade --allow-unauthenticated -y && apt-get dist-upgrade -y  --allow-unauthenticated
+			apt-get install kali-archive-keyring --allow-unauthenticated -y
+			apt-get update && apt-get upgrade --allow-unauthenticated -y && apt-get dist-upgrade -y  --allow-unauthenticated
 echo -e "\nInstalling the Kali Tools"
 echo "Select The Metapackages you want to install..."
 echo "1. Kali Linux base system"
