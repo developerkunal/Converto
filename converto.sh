@@ -164,6 +164,7 @@ done
 			;;
 
 		2) 
+			echo "Bye Bye"
 			break
 			;;
  esac
