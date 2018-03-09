@@ -126,8 +126,8 @@ do
   read INPUT_STRING
   case $INPUT_STRING in
 	1)
-		sudo apt-get update
-		sudo apt-get install xfce4 xfce4-goodies tightvncserver
+		sudo apt-get update -y
+		sudo apt-get install xfce4 xfce4-goodies tightvncserver -y
 		vncserver
 		vncserver -kill :1
 		mv ~/.vnc/xstartup ~/.vnc/xstartup.bak
