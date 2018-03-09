@@ -23,7 +23,7 @@ do
 			echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/apt/sources.list
 apt-get install kali-archive-keyring --allow-unauthenticated -y
 apt-get update && apt-get upgrade --allow-unauthenticated -y && apt-get dist-upgrade -y  --allow-unauthenticated
-echo "Installing the Kali Tools"
+echo -e "\nInstalling the Kali Tools"
 echo "Select The Metapackages you want to install..."
 echo "1. Kali Linux base system"
 echo "2. Kali Linux - all packages"
@@ -78,7 +78,7 @@ do
 		break
 		;;
 	8)
-		apt-get -f install	kali-linux-rfid -y --allow-unauthenticated
+		apt-get -f install kali-linux-rfid -y --allow-unauthenticated
 		apt-get -f install -y  --allow-unauthenticated
 		break
 		;;
@@ -114,20 +114,20 @@ do
   esac
 done
 apt-get install linux-headers-4.14.0-kali3-amd64 -y -y
-echo "kali linux installed"
+echo -e "\n\nKali linux installed"
 
 apt-get update && sudo apt-get upgrade
-echo "want to install Gui VNC or VNC"
-echo "1. Yes, Install Gui VNC"
-echo "2. Yes,Install VNC"
-echo "3. No"
+echo -e "\nDo you want to install VNC?"
+echo -e "\n1. Yes, Install VNC (Graphical)"
+echo "2. Yes,Install VNC (Non-Graphical)"
+echo "3. No, Do not install VNC"
 while :
 do
   read INPUT_STRING
   case $INPUT_STRING in
 	1)
 		sudo apt-get update -y
-		sudo apt-get install xfce4 xfce4-goodies tightvncserver -y
+		sudo apt-get install xfce4 xfce4-goodies tightvncserver -y --allow-unauthenticated
 		vncserver
 		vncserver -kill :1
 		mv ~/.vnc/xstartup ~/.vnc/xstartup.bak
@@ -148,7 +148,7 @@ do
 		break
 		;;
 	2)	
-		sudo apt-get install -y tightvncserver
+		sudo apt-get install -y tightvncserver --allow-unauthenticated
 		vncserver
 		netstat -plant
 		vncserver -kill :1
