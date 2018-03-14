@@ -136,4 +136,4 @@ root@kali:~# vncserver -kill :1
 Example IP in VNC Viewer : 127.0.0.1:1 
 
 
-# Credits : Kunal dawar, Ayush sahay, Gagan Gulyani
+# Credits : Kunal dawar, Ayush sahay.
