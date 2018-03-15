@@ -11,6 +11,7 @@
 			apt-get install xrdp
 			apt-get install xfce4
 			sudo apt-get install xfce4 xfce4-goodies
+			rm ~/.xsession
 			echo "#!/bin/bash
 				xrdb $HOME/.Xresources
 				startxfce4 &" >> ~/.xsession
