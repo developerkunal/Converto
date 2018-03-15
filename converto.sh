@@ -1,171 +1,69 @@
 #!/bin/bash
-RED='\033[1;31m'
-WHITE='\033[1;37m'
-printf "${RED}"
-echo "	 ██████╗ ██████╗ ███╗   ██╗██╗   ██╗███████╗██████╗ ████████╗ ██████╗ "
-echo "	██╔════╝██╔═══██╗████╗  ██║██║   ██║██╔════╝██╔══██╗╚══██╔══╝██╔═══██╗"
-echo "	██║     ██║   ██║██╔██╗ ██║██║   ██║█████╗  ██████╔╝   ██║   ██║   ██║"
-echo "	██║     ██║   ██║██║╚██╗██║╚██╗ ██╔╝██╔══╝  ██╔══██╗   ██║   ██║   ██║"
-echo "	╚██████╗╚██████╔╝██║ ╚████║ ╚████╔╝ ███████╗██║  ██║   ██║   ╚██████╔╝"
-echo "	 ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ "
-printf "${WHITE}"
-echo "-------------------------------Made By Kunal Dawar-------------------------------"
-echo "________________________________________________________________________________"
-echo "                   Installing Kali linux on Server"
-echo "           1. Yes"
-echo ""
-echo "           2. No"
-while :
-do
-	read INPUT_STRING
-	case $INPUT_STRING in
-		1) 
-			echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/apt/sources.list
-			apt-get install kali-archive-keyring --allow-unauthenticated -y
-			apt-get update && apt-get upgrade --allow-unauthenticated -y && apt-get dist-upgrade -y  --allow-unauthenticated
-echo -e "\nInstalling the Kali Tools"
-echo "Select The Metapackages you want to install..."
-echo "1. Kali Linux base system"
-echo "2. Kali Linux - all packages"
-echo "3. Kali Linux forensic tools"
-echo "4. Kali Linux complete system"
-echo "5. Kali Linux GPU tools"
-echo "6. Kali Linux Nethunter tools"
-echo "7. Kali Linux password cracking tools"
-echo "8. Kali Linux RFID tools"
-echo "9. Kali Linux SDR tools"
-echo "10. Kali Linux Top 10 tools"
-echo "11. Kali Linux VoIP tools"
-echo "12. Kali Linux webapp assessment tools"
-echo "13. Kali Linux wireless tools"
-while :
-do
-  read INPUT_STRING
-  case $INPUT_STRING in
-	1)
-		apt-get -f install kali-linux -y --allow-unauthenticated
-		apt-get -f install -y  --allow-unauthenticated
-		break
-		;;
-	2)	
-		apt-get -f install kali-linux-all -y --allow-unauthenticated
-		apt-get -f install -y  --allow-unauthenticated
-		break
-		;;
-	3)
-		apt-get -f install kali-linux-forensic -y --allow-unauthenticated
-		apt-get -f install -y  --allow-unauthenticated
-		break
-		;;
-	4)	
-		apt-get -f install kali-linux-full -y --allow-unauthenticated
-		apt-get -f install -y  --allow-unauthenticated
-		break
-		;;
-	5)	
-		apt-get -f install kali-linux-gpu -y --allow-unauthenticated
-		apt-get -f install -y  --allow-unauthenticated
-		break
-		;;
-	6)
-		apt-get -f install kali-linux-nethunter -y --allow-unauthenticated
-		apt-get -f install -y  --allow-unauthenticated
-		break
-		;;
-	7)
-		apt-get -f install kali-linux-pwtools -y --allow-unauthenticated
-		apt-get -f install -y  --allow-unauthenticated
-		break
-		;;
-	8)
-		apt-get -f install kali-linux-rfid -y --allow-unauthenticated
-		apt-get -f install -y  --allow-unauthenticated
-		break
-		;;
-	9)
-		apt-get -f install	kali-linux-sdr -y --allow-unauthenticated
-		apt-get -f install -y  --allow-unauthenticated
-		break
-		;;
-	10)
-		apt-get -f install	kali-linux-top10 -y --allow-unauthenticated
-		apt-get -f install -y  --allow-unauthenticated
-		break
-		;;
-	11)	
-		apt-get -f install kali-linux-voip -y --allow-unauthenticated
-		apt-get -f install -y  --allow-unauthenticated
-		break
-		;;
-	12)	
-		apt-get -f install kali-linux-web -y --allow-unauthenticated
-		apt-get -f install -y  --allow-unauthenticated
-		break
-		;;
-	13)	
-		apt-get -f install kali-linux-wireless -y --allow-unauthenticated
-		apt-get -f install -y  --allow-unauthenticated
-		break
-		;;
-	*)
-		echo -e "Invalid Choice"
-		;;
+function main(){
+	RED='\033[1;31m'
+	WHITE='\033[1;37m'
+	ORANGE='\033[01;38;5;166m'
+	GREEN='\033[01;38;5;118m'
+	printf "${RED}"
+	echo -e "	 ██████╗ ██████╗ ███╗   ██╗██╗   ██╗███████╗██████╗ ████████╗ ██████╗ "
+	echo -e "	██╔════╝██╔═══██╗████╗  ██║██║   ██║██╔════╝██╔══██╗╚══██╔══╝██╔═══██╗"
+	echo -e "	${WHITE}██║     ██║   ██║██╔██╗ ██║██║   ██║█████╗  ██████╔╝   ██║   ██║   ██║"
+	echo -e "	██║     ██║   ██║██║╚██╗██║╚██╗ ██╔╝██╔══╝  ██╔══██╗   ██║   ██║   ██║"
+	echo -e "	╚██████╗╚██████╔╝██║ ╚████║ ╚████╔╝ ███████╗██║  ██║   ██║   ╚██████╔╝"
+	echo -e "	 ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ "
+	echo -e "                             ${RED}   (Version - 2.O)                                "
+	printf "${WHITE}"
+	echo -e "----------------Contributers :- Kunal dawar && Ayush Sahay---------------------"
+	echo -e "------------------------------${ORANGE}Indian${WHITE} Cyber${GREEN} Heros${WHITE}-------------------------------"
+	echo -e "                    Kindly Read Note First by typing note                      "
+	echo -e "_______________________________________________________________________________"
+	echo -e "                   Installing Kali/Parrot linux on Server"
+	echo -e "           1. Yes"
+	echo -e ""
+	echo -e "           2. No"
+	COUNTER=0
+	while [  $COUNTER -lt 4 ]; do
+		read -p 'Input Your Choice: ' i
+		if (($i == 1)); then 
+			echo "Select Appropriate Option :-"
+			echo "1. Kali linux"
+			echo "2. Parrot"
 
-  esac
-done
-apt-get install linux-headers-4.14.0-kali3-amd64 -y -y
-echo -e "\n\nKali linux installed"
+		    read -p 'Input Your Choice: ' i
+		    
+	    	if (($i == 1)); then
+			
+				chmod +x ./files/kali
+				./files/kali
+				break
+			
+			elif (($i == 2)); then 
+			
+				chmod +x ./files/parrot
+				./files/parrot
+				break
 
-apt-get update && sudo apt-get upgrade
-echo -e "\nDo you want to install VNC?"
-echo -e "\n1. Yes, Install VNC (Graphical)"
-echo "2. Yes,Install VNC (Non-Graphical)"
-echo "3. No, Do not install VNC"
-while :
-do
-  read INPUT_STRING
-  case $INPUT_STRING in
-	1)
-		sudo apt-get update -y
-		sudo apt-get install xfce4 xfce4-goodies tightvncserver -y --allow-unauthenticated
-		vncserver
-		vncserver -kill :1
-		mv ~/.vnc/xstartup ~/.vnc/xstartup.bak
-		echo "#!/bin/bash
-		xrdb $HOME/.Xresources
-		startxfce4 &" >> ~/.vnc/xstartup
-		sudo chmod +x ~/.vnc/xstartup
-		echo "#!/bin/bash
-		PATH="$PATH:/usr/bin/"
-		export USER="user"
-		DISPLAY="1"
-		DEPTH="16"
-		GEOMETRY="1024x768"
-		OPTIONS="-depth ${DEPTH} -geometry ${GEOMETRY} :${DISPLAY} -localhost"
-		. /lib/lsb/init-functions" >> /etc/init.d/vncserver
-		sudo chmod +x /etc/init.d/vncserver
-		vncserver
-		break
-		;;
-	2)	
-		sudo apt-get install -y tightvncserver --allow-unauthenticated
-		vncserver
-		netstat -plant
-		vncserver -kill :1
-		break
-		;;
-	3)
-		
-		break
-		;;
- esac
+		    else
+				echo -e "\nInvalid Choice! Try again."
+				break
+			fi
+		elif (($i == 2)); then 	
+				echo "Bye Bye!!! You have selected NO"
+				break
+		elif (($i == note)); then
+			echo -e "\n*****************************************************************"
+			echo "1. Kali Linux is working on Both Ubuntu and debian Server System"
+			echo "2. Parrot OS is only Working on Ubuntu Server System"
+			echo "3. There is Only Option of RDP in Ubuntu Server System"
+			echo "*******************************************************************"
+		else
+			echo -e "\n\nInvalid Seletion!!!  $((3-$COUNTER)) chances left.."
+		fi
+		let COUNTER=COUNTER+1
 done
-			break
-			;;
-
-		2) 
-			echo "Bye Bye"
-			break
-			;;
- esac
-done
+}
+if [ `whoami` == "root" ]; then
+	main
+else
+	echo "This script needs to be run as root!!!"
+fi
