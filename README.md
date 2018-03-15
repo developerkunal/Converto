@@ -7,6 +7,11 @@
                   ###   It also installs VNC (Graphical / Non-Graphical VNC).   ###
 
 # Steps For Installing :-
+
+  Video :- How to install 
+  
+  [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/fZkJ0VF21j0/0.jpg)](https://www.youtube.com/watch?v=fZkJ0VF21j0)
+
 1.sudo apt-get update
 
 2.sudo apt-get install git
