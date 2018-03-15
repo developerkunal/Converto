@@ -66,6 +66,10 @@ function install(){
             chmod +x /files/vnc
             ./files/vnc
             break
+        elif (($i ==3 )); then
+            echo "Bye Bye"
+            break
+            ;;
         else
             echo -e "\n\nInvalid Seletion!!!  $((3-$COUNTER)) chances left.."
             fi
