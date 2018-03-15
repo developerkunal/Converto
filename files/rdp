@@ -8,9 +8,10 @@
 		read -p 'Input Your Choice: ' i
 		if (($i == 1)); then 
 			apt-get update
-			apt-get install xrdp
-			apt-get install xfce4
-			sudo apt-get install xfce4 xfce4-goodies
+			apt-get install xrdp -y
+			apt-get install xfce4 -y	
+			sudo apt-get install xfce4 xfce4-goodies -y
+			sudo apt-get install xfce4-terminal gnome-icon-theme-full tango-icon-theme -y
 			rm ~/.xsession
 			echo "#!/bin/bash
 				xrdb $HOME/.Xresources
