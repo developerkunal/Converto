@@ -52,7 +52,7 @@ do
 		break
 		;;
 	3)
-		
+		echo "Bye Bye"
 		break
 		;;
  esac
