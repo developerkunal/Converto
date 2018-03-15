@@ -1,10 +1,10 @@
-[![SensioLabs Insight](https://img.shields.io/badge/package%20v1.0-Complete-brightgreen.svg)](https://github.com/developerkunal/Converto/) <div class='pm-button'><a href='https://www.payumoney.com/paybypayumoney/#/992F16A0FCE7242292969EA30ED11873'><img src='https://img.shields.io/badge/Donation-Payumoney-green.svg' /></a></div> 
-# Converto
-### Automated Kali Linux Installer for VPS
-                     ### Installing Kali linux on VPS Server.###
-                       ###     Tested on Ubuntu.   ###
-                       ###     Tested on Debian.   ###
-      ###   It also installs VNC (Graphical / Non-Graphical VNC).   ###
+[![SensioLabs Insight](https://img.shields.io/badge/package%20v1.0-Complete-brightgreen.svg)](https://github.com/developerkunal/Converto/) [![SensioLabs Insight](https://img.shields.io/badge/package%20v2.0-complete-brightgreen.svg)](https://github.com/developerkunal/Converto/) [![SensioLabs Insight](https://img.shields.io/badge/Licence-GNU%20General%20Public%20License-brightgreen.svg)](https://github.com/developerkunal/Converto/blob/master/LICENSE)<div class='pm-button'><a href='https://www.payumoney.com/paybypayumoney/#/992F16A0FCE7242292969EA30ED11873'><img src='https://img.shields.io/badge/Donation-Payumoney-green.svg' /></a></div> 
+# Converto V2
+### Automated Kali Linux or Parrot OS Installer for VPS
+                     ### Installing Kali linux or Parrot OS on VPS Server.###
+                                ###     Tested on Ubuntu.   ###
+                                ###     Tested on Debian.   ###
+                  ###   It also installs VNC (Graphical / Non-Graphical VNC).   ###
 
 # Steps For Installing :-
 1.sudo apt-get update
@@ -19,91 +19,74 @@
 
 6. ./converto.sh
 
-![screenshot from 2018-03-09 23-49-39](https://user-images.githubusercontent.com/35455566/37215675-ee9c2d04-23f9-11e8-80a3-0284544c2c57.png)
+![screenshot from 2018-03-15 19-16-47](https://user-images.githubusercontent.com/35455566/37458269-ccb073ae-2885-11e8-96dd-9f856f32c064.png)
 
 7. Type 1 For Install
+   
    Type 2 For Exit
+   
+   Type note For Reading Note(Recommended)
+   
+   ![screenshot from 2018-03-15 19-21-53](https://user-images.githubusercontent.com/35455566/37458390-25e58eb4-2886-11e8-9945-7bca44b68f8c.png)
+
 
 8. Press 1 and Enter
 
+![screenshot from 2018-03-15 19-23-38](https://user-images.githubusercontent.com/35455566/37458477-68a3430e-2886-11e8-8a42-0719f0c53463.png)
 
-![screenshot from 2018-03-10 00-22-42](https://user-images.githubusercontent.com/35455566/37215749-1a8544c8-23fa-11e8-854f-0eb100f83b2c.png)
 
 9. Now choose the desired option.
 
-![screenshot from 2018-03-10 00-25-15](https://user-images.githubusercontent.com/35455566/37215819-48a9b186-23fa-11e8-8189-ce1f46786eb0.png)
 
-10. Press Y .
+![screenshot from 2018-03-15 19-23-38](https://user-images.githubusercontent.com/35455566/37458477-68a3430e-2886-11e8-8a42-0719f0c53463.png)
 
-![screenshot from 2018-03-10 00-32-17](https://user-images.githubusercontent.com/35455566/37215883-806ada46-23fa-11e8-938b-ad86b5233af4.png)
+10. I am Selecting 2 for Parrot OS.
 
-11. Now Select Yes.
-
-![screenshot from 2018-03-10 00-34-15](https://user-images.githubusercontent.com/35455566/37215989-d697f372-23fa-11e8-876b-b8420db0e356.png)
+![screenshot from 2018-03-15 19-24-48](https://user-images.githubusercontent.com/35455566/37458573-ac98108a-2886-11e8-8cd5-25e833b423e4.png)
 
 
-12. Now Select install the package maintainer's version And Press Enter.
+11. Now choose the desired option.
 
-![screenshot from 2018-03-10 00-38-14](https://user-images.githubusercontent.com/35455566/37216205-7f568bc2-23fb-11e8-89e1-b150f2b7f1d6.png)
+** 1) Install Core Only 
 
+** 2) Install Headless Edition 
 
-13. Now again Select install the package maintainer's version And Press Enter.
+** 3) Install Standard Edition 
 
-![screenshot from 2018-03-10 00-40-32](https://user-images.githubusercontent.com/35455566/37216271-a89d254a-23fb-11e8-950c-5565f78a7115.png)
+** 4) Install Full Edition 
 
+** 5) Install Home Edition 
 
-14. Now Choose the appropriate Metapackages you want to install .
+** 6) Install Embedded Edition 
 
-            1. Kali Linux base system
-            2. Kali Linux - all packages
-            3. Kali Linux forensic tools
-            4. Kali Linux complete system
-            5. Kali Linux GPU tools
-            6. Kali Linux Nethunter tools
-            7. Kali Linux password cracking tools
-            8. Kali Linux RFID tools
-            9. Kali Linux SDR tools
-            10. Kali Linux Top 10 tools
-            11. Kali Linux VoIP tools
-            12. Kali Linux webapp assessment tools
-            13. Kali Linux wireless tools
-    
-15. Select option 2 (Kali Linux - all packages install) (Recommended).
+12. Selecting 4 For Full installation
 
-![screenshot from 2018-03-10 00-50-53](https://user-images.githubusercontent.com/35455566/37216845-1a049d48-23fd-11e8-90d2-acc715cd550d.png)
+![screenshot from 2018-03-15 19-31-25](https://user-images.githubusercontent.com/35455566/37458828-7a3fb5ec-2887-11e8-96e0-8ef67cab4aa3.png)
 
+13. Select Yes.(Necessary)
 
-16. Select Language for the layout matching the keyboard  (i am Selecting English.)
+![screenshot from 2018-03-15 19-33-23](https://user-images.githubusercontent.com/35455566/37458918-bf0fc298-2887-11e8-8af7-a42b0d2c006c.png)
 
-![screenshot from 2018-03-10 00-53-26](https://user-images.githubusercontent.com/35455566/37216948-7b389998-23fd-11e8-8b8b-80da77c80a50.png)
+14. Select Yes.(Necessary)
 
-17. Select No.
+![screenshot from 2018-03-15 19-46-04](https://user-images.githubusercontent.com/35455566/37459501-88eed418-2889-11e8-8862-3a7c1aed6a7d.png)
 
-![screenshot from 2018-03-10 00-54-14](https://user-images.githubusercontent.com/35455566/37216991-923c8d52-23fd-11e8-9ad1-9698b554414f.png)
+15. Type Y and Press Enter.(Necessary)
 
-18. Select Yes.
+![screenshot from 2018-03-15 19-47-07](https://user-images.githubusercontent.com/35455566/37459554-b9ba3484-2889-11e8-97d0-4db00f6018ef.png)
 
-![screenshot from 2018-03-10 00-55-00](https://user-images.githubusercontent.com/35455566/37217033-b1baff74-23fd-11e8-9517-d53c4036bee1.png)
+16. Type Y and Press Enter.(Necessary)
 
+![screenshot from 2018-03-15 19-56-42](https://user-images.githubusercontent.com/35455566/37459975-0a29c992-288b-11e8-8bca-d700d02fc067.png)
 
-19. Press Right Arrow Key, and Press Enter .
+17. Select install the package maintainer's version. 
 
-![screenshot from 2018-03-10 00-56-01](https://user-images.githubusercontent.com/35455566/37217088-d1c14eae-23fd-11e8-8bd9-71b3ccf19902.png)
+![screenshot from 2018-03-15 19-58-38](https://user-images.githubusercontent.com/35455566/37460070-58588770-288b-11e8-8e15-70d32e74fea8.png)
 
-20. Select Yes.
+## Installation Done....
 
-![screenshot from 2018-03-10 00-56-49](https://user-images.githubusercontent.com/35455566/37217126-edf7187e-23fd-11e8-9602-66e01d7030ac.png)
+![screenshot from 2018-03-15 20-12-55](https://user-images.githubusercontent.com/35455566/37460726-5631f11e-288d-11e8-87fa-b355f93654ec.png)
 
-21. Press Enter If Not Want to add any Users.
-
-![screenshot from 2018-03-10 00-57-44](https://user-images.githubusercontent.com/35455566/37217249-52cafe0a-23fe-11e8-927d-2b3adc2eab02.png)
-
-
-22. Select From inetd.
-
-23. Press Enter.
-
-## Now Kali Linux is Successfully Installed.
 ### Optional Step for installing VNC.
 
 
