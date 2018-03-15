@@ -13,7 +13,7 @@
 			sudo apt-get install xfce4 xfce4-goodies -y
 			sudo apt-get install xfce4-terminal gnome-icon-theme-full tango-icon-theme -y
 			rm ~/.xsession
-			echo "#!/bin/bash
+			echo -e "#!/bin/bash
 				xrdb $HOME/.Xresources
 				startxfce4 &" >> ~/.xsession
 			/etc/init.d/xrdp start
