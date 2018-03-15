@@ -1,0 +1,60 @@
+#!/bin/bash
+
+show_menu_kali(){
+	NORMAL=`echo "\033[m"`
+    MENU=`echo "\033[36m"` #Blue
+    NUMBER=`echo "\033[33m"` #yellow
+    FGRED=`echo "\033[41m"`
+    RED_TEXT=`echo "\033[31m"`
+    ENTER_LINE=`echo "\033[33m"`
+    echo -e "${MENU}**********************************************************${NORMAL}"
+    echo -e "-------------Welcome to Kali Linux OS Installer--------------"
+    echo -e "\t\tConverto V2.O"
+    echo -e "${MENU}**${NUMBER} 1)${MENU} Install Kali Linux base system ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 2)${MENU} Install Kali Linux - all packages ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 3)${MENU} Install Kali Linux forensic tools ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 4)${MENU} Install Kali Linux complete system ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 5)${MENU} Install Kali Linux GPU tools ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 6)${MENU} Install Kali Linux Nethunter tools ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 7)${MENU} Install Kali Linux password cracking tools ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 8)${MENU} Install Kali Linux RFID tools ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 9)${MENU} Install Kali Linux SDR tools ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 10)${MENU}Install Kali Linux Top 10 tools ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 11)${MENU}Install Kali Linux VoIP tools ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 12)${MENU}Install Kali Linux webapp assessment tools ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 13)${MENU}Install Kali Linux wireless tools ${NORMAL}"
+    echo -e "${MENU}*********************************************************${NORMAL}"
+	COUNTER=0
+    while [  $COUNTER -lt 4 ]; do
+
+	    echo -e "\n${ENTER_LINE}Please enter a menu option and enter or ${RED_TEXT}enter to exit. ${NORMAL}"
+	    read -p 'Input Your Choice: ' i
+	    if (($i <= 13 )) && (( $i >= 1 )); then 
+	    	install $i
+	    	break
+	    else
+	    	echo -e "\nInvalid Choice! Try again. $((3-$COUNTER)) chances left..)"
+
+	    fi
+	    let COUNTER=COUNTER+1 
+	done
+}
+function include(){
+	echo -e "deb http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/apt/sources.list
+	apt-get install kali-archive-keyring --allow-unauthenticated -y
+	apt-get update && apt-get upgrade --allow-unauthenticated -y && apt-get dist-upgrade -y  --allow-unauthenticated
+}
+
+function install(){
+    include
+	kali=("kali-linux" "kali-linux-all" "kali-linux-forensic" "kali-linux-full" "kali-linux-gpu" "kali-linux-nethunter" "kali-linux-pwtools" "kali-linux-rfid" "kali-linux-sdr" "kali-linux-top10" "kali-linux-voip" "kali-linux-web" "kali-linux-wireless")
+	apt-get -f install ${kali[$1-1]} -y --allow-unauthenticated
+	apt-get -f install -y  --allow-unauthenticated
+	apt-get install linux-headers-4.14.0-kali3-amd64 -y -y
+    clear
+	echo -e "\n\n Installation Completed Successfully!!!"
+    chmod +x /files/vnc
+    ./files/vnc
+    break
+}
+show_menu_kali

@@ -1,0 +1,27 @@
+#!/bin/bash
+	apt-get update && sudo apt-get upgrade
+	echo -e "\nDo you want to install RDP?"
+	echo -e "\n1. Yes, Install RDP (Graphical)"
+	echo "2. No, Do not install RDP"
+	COUNTER=0
+	while [  $COUNTER -lt 4 ]; do
+		read -p 'Input Your Choice: ' i
+		if (($i == 1)); then 
+			apt-get update
+			apt-get install xrdp
+			apt-get install xfce4
+			sudo apt-get install xfce4 xfce4-goodies
+			echo "#!/bin/bash
+				xrdb $HOME/.Xresources
+				startxfce4 &" >> ~/.xsession
+			/etc/init.d/xrdp start
+			echo -e "\nRDP Successfully Installed!!! \n\nRDP Started!!!"
+			break
+		elif (($i == 2)); then
+			echo -e "You Have Selected No!!!"
+			break
+		else
+			echo -e "\n\nInvalid Seletion!!!  $((3-$COUNTER)) chances left.."
+		fi
+		let COUNTER=COUNTER+1
+done

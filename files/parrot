@@ -1,0 +1,75 @@
+#!/bin/bash
+
+show_menu_parrot(){
+    NORMAL=`echo "\033[m"`
+    MENU=`echo "\033[36m"` #Blue
+    NUMBER=`echo "\033[33m"` #yellow
+    FGRED=`echo "\033[41m"`
+    RED_TEXT=`echo "\033[31m"`
+    ENTER_LINE=`echo "\033[33m"`
+    echo -e "${MENU}*********************************************${NORMAL}"
+    echo -e "       Welcome to Parrot OS Installer"
+    echo -e "\t\tConverto V2.O"
+    echo -e "${MENU}**${NUMBER} 1)${MENU} Install Core Only ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 2)${MENU} Install Headless Edition ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 3)${MENU} Install Standard Edition ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 4)${MENU} Install Full Edition ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 5)${MENU} Install Home Edition ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 6)${MENU} Install Embedded Edition ${NORMAL}"
+    echo -e "${MENU}*********************************************${NORMAL}"
+    COUNTER=0
+    while [  $COUNTER -lt 4 ]; do
+        echo -e "\n${ENTER_LINE}Please enter a menu option or ${RED_TEXT}enter 7 to exit. ${NORMAL}"
+        read -p 'Input Your Choice: ' i
+        if (($i <7 )) && (( $i >= 1 )); then 
+            install $i
+            break
+        elif (($i == 7 )); then
+            echo -e "\nOperation terminated"
+            break
+        else
+            echo -e "\nInvalid Choice! Try again. $((3-$COUNTER)) chances left..)"
+
+        fi
+        let COUNTER=COUNTER+1 
+    done
+}
+function include() {
+    echo -e "deb http://mirrordirector.archive.parrotsec.org/parrot parrot main contrib non-free" > /etc/apt/sources.list.d/parrot.list
+    echo -e "# This file is empty, feel free to add here your custom APT repositories\n\n# The standard Parrot repositories are NOT here. If you want to\n# edit them, take a look into\n#                      /etc/apt/sources.list.d/parrot.list\n#                      /etc/apt/sources.list.d/debian.list\n\n\n\n# If you want to change the default parrot repositories setting\n# another localized mirror, then use the command parrot-mirror-selector\n# and see its usage message to know what mirrors are available\n\n\n\n#uncomment the following line to enable the Parrot Testing Repository\n#deb http://us.repository.frozenbox.org/parrot testing main contrib nonfree" > /etc/apt/sources.list
+    wget -qO - https://archive.parrotsec.org/parrot/misc/parrotsec.gpg | apt-key add -
+    apt-get update
+    apt-get -y --force-yes -o Dpkg::Options::="--force-overwrite" install apt-parrot parrot-archive-keyring --no-install-recommends
+    parrot-mirror-selector default stable #change it if you want another mirror, launch it without parameters to get the full list of available mirrors
+    apt-get update
+    apt-get -y --force-yes -o Dpkg::Options::="--force-overwrite" install parrot-core
+    apt-get -y --force-yes -o Dpkg::Options::="--force-overwrite" dist-upgrade
+    apt-get -y --force-yes -o Dpkg::Options::="--force-overwrite" autoremove
+}
+function install(){
+    include
+    parrot=("parrot-pico" "parrot-interface parrot-tools" "parrot-interface parrot-interface-full parrot-tools-full" "parrot-interface-full parrot-interface" "parrot-interface parrot-mini")
+    apt-get -y --force-yes -o Dpkg::Options::="--force-overwrite" install  $parrot[$1-1]
+    echo -e "\n\n Installation Completed Successfully!!!"
+    echo -e "\n\nDo you Want to install RDP or VNC(Graphical/Non-Graphical)"
+    echo -e "1. Remote Desktop Protocal(RDP)"
+    echo -e "2. Virtual Network Computing(VNC)"
+    echo -e "3. Not want to install"
+    COUNTER=0
+    while [  $COUNTER -lt 4 ]; do
+        read i
+        if (($i ==1 )); then
+            chmod +x ./files/rdp
+            ./files/rdp
+            break
+        elif (($i ==2 )); then
+            chmod +x /files/vnc
+            ./files/vnc
+            break
+        else
+            echo -e "\n\nInvalid Seletion!!!  $((3-$COUNTER)) chances left.."
+            fi
+        let COUNTER=COUNTER+1
+done
+}
+show_menu_parrot
