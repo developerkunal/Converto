@@ -63,7 +63,7 @@ function install(){
             ./files/rdp
             break
         elif (($i ==2 )); then
-            chmod +x /files/vnc
+            chmod +x ./files/vnc
             ./files/vnc
             break
         elif (($i ==3 )); then
