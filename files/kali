@@ -53,7 +53,7 @@ function install(){
 	apt-get install linux-headers-4.14.0-kali3-amd64 -y -y
     clear
 	echo -e "\n\n Installation Completed Successfully!!!"
-    chmod +x /files/vnc
+    chmod +x ./files/vnc
     ./files/vnc
     break
 }
