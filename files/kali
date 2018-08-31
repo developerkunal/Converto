@@ -49,8 +49,12 @@ function install(){
     include
 	kali=("kali-linux" "kali-linux-all" "kali-linux-forensic" "kali-linux-full" "kali-linux-gpu" "kali-linux-nethunter" "kali-linux-pwtools" "kali-linux-rfid" "kali-linux-sdr" "kali-linux-top10" "kali-linux-voip" "kali-linux-web" "kali-linux-wireless")
 	apt-get -f install ${kali[$1-1]} -y --allow-unauthenticated
+	 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 40976EAF437D05B5
+    	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3B4FE6ACC0B21F32
+    	wget -q -O - https://archive.kali.org/archive-key.asc  | apt-key add
 	apt-get -f install -y  --allow-unauthenticated
-	apt-get install linux-headers-4.14.0-kali3-amd64 -y -y
+	sudo apt-get install linux-headers-generic -y
+	apt-get update && apt-get upgrade --allow-unauthenticated -y && apt-get dist-upgrade -y  --allow-unauthenticated
     clear
 	echo -e "\n\n Installation Completed Successfully!!!"
     chmod +x ./files/vnc
